@@ -1,0 +1,13 @@
+<h2 style="text-align: center;color: rgb(25, 111, 154); font-style: oblique;">To Do List Table</h2>
+<!-- count: {{todoService.getTodos().length}} -->
+<div>
+    <!-- <input [(ngModel)]="searchTerms" placeholder="Search"> -->
+</div>
+
+<div>
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let todo of todoService.getTodoOrphans()">
+            <app-todo-view [todo]="todo"></app-todo-view>
+        </li>
+    </ul>
+</div>

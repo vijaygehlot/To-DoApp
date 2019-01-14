@@ -1,0 +1,24 @@
+<div class="form-row">
+
+    <div class="col-4">
+        <input type="text" [(ngModel)]="todo.title" class="form-control" placeholder="Title">
+
+    </div>
+    <div class="col-7">
+        <input type="text" style="width: 55%;" [(ngModel)]="todo.description" class="form-control" placeholder="Description">
+
+    </div>
+    <div class="col-4">
+        <input [(ngModel)]="todo.dateToComplete" class="form-control" placeholder="Date to complete by" type="date">
+
+    </div>
+    <div class="col-auto my-1">
+
+        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" *ngIf="todoService.getTodos().length > 0" [(ngModel)]="todo.parentId">
+
+  <option selected>Choose Task</option>
+<option *ngFor="let todoParent of todoService.getTodos()" [ngValue]="todoParent.id">{{todoParent.title}}</option>
+</select>
+    </div>
+
+</div>
